@@ -11,9 +11,9 @@ type SideLogoProps = {
 
 const SideLogo = ({text, className}: SideLogoProps) => {
   return (
-    <div className={clsx(outfit.className,"flex justify-between gap-6 text-white font-light", className)}>
+    <div className={clsx(outfit.className,"flex justify-between font-light", className)}>
           <LogoSymbol className="hidden lg:block w-auto h-6" />
-          <p className="-mt-1 text-sm sm:text-base lg:text-lg hover:text-theme-light-beige transition-opacity duration-300 cursor-pointer">
+          <p className="-mt-1 text-sm sm:text-base lg:text-lg transition-opacity duration-300 cursor-pointer">
             {text}
           </p>
     </div>
