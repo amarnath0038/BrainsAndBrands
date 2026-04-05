@@ -59,7 +59,7 @@ const VideoSection = () => {
 
             {/* Video */}
             <video
-              src="/BrainsAndBrandsVideo.mp4"
+              src="/Brains-Brands-Final-Compressed.mp4"
               controls
               autoPlay
               className="w-full h-auto"
