@@ -42,4 +42,5 @@ next-env.d.ts
 
 AGENTS.md
 CLAUDE.md
-public/BrainsAndBrandsVideo.mp4
+*:Zone.Identifier
+
