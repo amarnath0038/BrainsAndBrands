@@ -16,7 +16,7 @@ const HeroContent = () => {
 
       <SideLogo
         text="Create Without Limits"
-        className="mt-4 border border-white/40 hover:border-white/50 bg-white/10 hover:bg-black/30 rounded-full px-6 py-3 backdrop-blur-sm transition duration-300"
+        className="gap-6 mt-4 border border-white/40 hover:border-white/50 bg-white/10 hover:bg-black/30 rounded-full px-6 py-3 backdrop-blur-sm transition duration-300"
       />
 
       <VideoSection />

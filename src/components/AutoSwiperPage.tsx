@@ -2,6 +2,11 @@ import ImageScroller from "./ImageScroller";
 
 
 const AutoSwiperPage = () => {
+  const baseImages = [
+    "/SwiperImage1.webp",
+    "/SwiperImage2.webp",
+    "/SwiperImage3.webp",
+  ];
   return (
     <section className="relative bg-[#fff3e9] pb-24 md:pb-[140px] lg:pb-[200px]">
 
@@ -19,7 +24,7 @@ const AutoSwiperPage = () => {
       </div>
 
       {/*Swiper */}
-      <ImageScroller />
+      <ImageScroller images={baseImages} direction="left" speed={20} />
     </section>
   );
 };

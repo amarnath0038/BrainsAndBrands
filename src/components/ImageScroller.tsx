@@ -2,25 +2,33 @@
 
 import { motion } from "framer-motion";
 
-const baseImages = [
-  "/SwiperImage1.webp",
-  "/SwiperImage2.webp",
-  "/SwiperImage3.webp",
-];
+type ImageScrollerProps = {
+  images: string[];
+  direction?: "left" | "right";
+  speed?: number;
+  className?: string;
+};
 
-// duplicate for seamless loop
-const infiniteImages = [...baseImages, ...baseImages];
+const ImageScroller = ({
+  images,
+  direction = "left",
+  speed = 20,
+  className = "",
+}: ImageScrollerProps) => {
+  const infiniteImages = [...images, ...images];
 
-const ImageScroller = () => {
+  const isLeft = direction === "left";
+
   return (
-    <section className="w-full bg-[#FFF2E8] py-20 overflow-hidden">
-      
+    <div className={`w-full overflow-hidden ${className}`}>
       <div className="flex relative w-full overflow-hidden whitespace-nowrap">
         
         <motion.div
-          animate={{ x: ["0%", "-50%"] }}
+          animate={{
+            x: isLeft ? ["0%", "-50%"] : ["-50%", "0%"],
+          }}
           transition={{
-            duration: 20, // faster since it's just images
+            duration: speed,
             ease: "linear",
             repeat: Infinity,
           }}
@@ -34,6 +42,7 @@ const ImageScroller = () => {
               <img
                 src={src}
                 alt={`img-${i}`}
+                loading="lazy"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -41,8 +50,8 @@ const ImageScroller = () => {
         </motion.div>
 
       </div>
-    </section>
+    </div>
   );
-}
+};
 
 export default ImageScroller;

@@ -48,7 +48,7 @@ const IntroSection = () => {
             
             <div className="relative z-0 flex flex-col md:flex-row-reverse gap-10 md:gap-0">
                 <div className="absolute opacity-0 md:opacity-100 inset-0 flex items-start justify-center -top-13 -right-8">
-                    <LogoBroken className="relative z-10 w-[91px] h-[116px]" />
+                    <LogoBroken className=" text-[#E9DACE] relative z-10 w-[91px] h-[116px]" />
                 </div>
                 
                 <div className="relative overflow-hidden group md:w-1/2">

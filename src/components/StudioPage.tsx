@@ -33,7 +33,7 @@ const StudioPage = () => {
             </div>
 
             <div className="md:w-1/2 flex items-end relative">
-                <LogoBroken className="right-0 transform -translate-y-[50%] md:-translate-y-[0%] md:-top-75 lg:-top-62 xl:-top-52 absolute z-0 md:block w-[40%] md:w-[80%] w-[378px] h-[482px]" />
+                <LogoBroken className="text-[#E9DACE] right-0 transform -translate-y-[50%] md:-translate-y-[0%] md:-top-75 lg:-top-62 xl:-top-52 absolute z-0 md:block w-[40%] md:w-[80%] w-[378px] h-[482px]" />
                 <div className="relative z-10 flex flex-col gap-10 w-full">
                     <p className={`${outfit.className} text-black text-lg font-normal`}>
                         From studio space to professional gear and on-ground support,
