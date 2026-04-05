@@ -84,14 +84,14 @@ const testimonials: Testimonial[] = [
 
 const StoriesSwiper = () => {
   return (
-    <section className="w-full pb-16"> {/* space for dots */}
+    <section className="w-full pb-16"> 
 
       <Swiper
         modules={[Pagination]}
         slidesPerView={1}
         spaceBetween={40}
         loop={true}
-        speed={600} // fast jump instead of slow scroll
+        speed={600} // fast jump
         pagination={{
           clickable: true,
           el: ".custom-pagination",
@@ -141,7 +141,7 @@ const StoriesSwiper = () => {
         ))}
       </Swiper>
 
-      {/* ✅ Custom Pagination BELOW */}
+      
       <div className="custom-pagination flex justify-center mt-6 gap-3"></div>
 
     </section>
