@@ -1,3 +1,6 @@
+import AnimatedHero from "./AnimatedHero";
+import AnimatedTextGSAP from "./AnimatedHero";
+import AnimatedText from "./AnimatedText";
 import SideLogo from "./SideLogo";
 import VideoSection from "./VideoSection";
 import { outfit } from "@/lib/fonts";
@@ -10,9 +13,16 @@ const HeroContent = () => {
         Where vision meets velocity, an AI-enabled multi-use studio redefining creativity
       </p>
 
-      <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium max-w-4xl uppercase mb-6">
+      {/* <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium max-w-4xl uppercase mb-6">
         A SPACE TO EXPRESS & EXPERIENCE
-      </h1>
+      </h1> */}
+      <AnimatedHero
+        lines={[
+          "A SPACE TO EXPRESS &",
+          "EXPERIENCE",
+        ]}
+        className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium max-w-4xl uppercase mb-6"
+      />
 
       <SideLogo
         text="Create Without Limits"
