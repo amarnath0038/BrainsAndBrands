@@ -6,7 +6,7 @@ import SocialIcons from "./SocialIcons";
 
 const Footer = () => {
   return (
-    <footer className="bottom-0 relative left-0 right-0 bg-black text-white">
+    <footer className="bottom-0 relative left-0 right-0 bg-[#221e20] text-white">
       <LogoBroken className="text-[#E9DACE]/20 absolute z-0 right-[7%] bottom-0 w-[90%] h-[60%] md:w-[22%] md:h-[100%] w-[272px] h-[212px]" />
       <div className="relative z-10 px-6 sm:px-6 md:px-12 lg:px-16 xl:px-[123px] pt-10 pb-24 lg:py-12 xl:py-15 h-full w-full">
         <div className="flex relative z-10 flex-col lg:flex-row lg:items-start lg:justify-between gap-8 lg:gap-12">
