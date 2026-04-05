@@ -1,6 +1,5 @@
 import AnimatedHero from "./AnimatedHero";
 import AnimatedTextGSAP from "./AnimatedHero";
-import AnimatedText from "./AnimatedText";
 import SideLogo from "./SideLogo";
 import VideoSection from "./VideoSection";
 import { outfit } from "@/lib/fonts";
