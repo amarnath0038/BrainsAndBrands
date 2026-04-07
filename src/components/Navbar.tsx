@@ -5,8 +5,15 @@ import { usePathname } from "next/navigation";
 import clsx from "clsx";
 import Logo from "./Logo";
 import SideLogo from "./SideLogo";
+import { Chocolate_Classical_Sans } from "next/font/google";
 
-const Navbar = () => {
+
+type NavBarProps = {
+  className?: string;
+}
+
+
+const Navbar = ({ className }: NavBarProps) => {
   const [open, setOpen] = useState(false);
   const [show, setShow] = useState(true);
   const pathname = usePathname();
@@ -44,7 +51,7 @@ const Navbar = () => {
     <header
       className={clsx(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        show ? "translate-y-0" : "-translate-y-full"
+        show ? "translate-y-0" : "-translate-y-full", className
       )}
       style={{
         backgroundColor: isHome
