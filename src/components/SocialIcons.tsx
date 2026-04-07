@@ -2,6 +2,7 @@ const SocialIcons = () => {
   return (
     <div className="flex space-x-3 lg:space-x-4 text-white">
 
+
       {/* LinkedIn */}
       <a
         href="https://www.linkedin.com/company/brainsandbrands-1"

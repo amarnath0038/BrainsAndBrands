@@ -50,7 +50,7 @@ const Footer = () => {
                     <p className="text-[#fff3e9] font-medium text-lg tracking-wider mb-3 lg:mb-4">
                         SOCIAL
                     </p>
-                    <div className={`flex flex-col space-y-2 lg:space-y-3 font-nomal text-white`}>
+                    <div className={`flex flex-col space-y-2 lg:space-y-3 font-nomal`}>
                         <SocialIcons />
                     </div>
                 </div>
