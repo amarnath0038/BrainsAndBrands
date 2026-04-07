@@ -33,7 +33,8 @@ const StudioPage = () => {
             </div>
 
             <div className="md:w-1/2 flex items-end relative">
-                <LogoBroken className="text-[#E9DACE] right-0 transform -translate-y-[50%] md:-translate-y-[0%] md:-top-75 lg:-top-62 xl:-top-52 absolute z-0 md:block w-[40%] md:w-[80%] w-[378px] h-[482px]" />
+                <LogoBroken className=" hidden md:block text-[#E9DACE] right-0 transform-translate-y-[50%] md:-translate-y-[0%] md:-top-75 lg:-top-62 xl:-top-52 absolute z-0 md:block w-[40%] md:w-[80%] w-[378px] h-[482px]" />
+                
                 <div className="relative z-10 flex flex-col gap-10 w-full">
                     <p className={`${outfit.className} text-black text-lg font-normal`}>
                         From studio space to professional gear and on-ground support,
@@ -41,9 +42,6 @@ const StudioPage = () => {
                            Rent the space, the tech, or both, our end-to-end setup is built to 
                         simplify your content production process.
                     </p>
-                    {/* <div className="flex justify-start">
-                        <SideLogo text="Explore Services" className={clsx("gap-8 text-black underline underline-offset-2 tracking-tight")} />
-                    </div> */}
                     <SideLogo text="Explore Services" className={clsx("self-start gap-8 text-black underline underline-offset-2 tracking-tight")} />
                 </div>
             </div>

@@ -7,9 +7,9 @@ const IntroSection = () => {
     <section className="px-6 sm:px-8 md:px-16 lg:px-[123px] pt-10 pb-24 md:py-[140px] lg:py-[200px] bg-[#fff3e9]">
       <div className=" relative z-10 h-full flex flex-col gap-14 md:gap-28">
         {/*Mobile content*/}
-        <div className="block md:hidden">
+        {/* <div className="block md:hidden">
            Mobile Content
-        </div>
+        </div> */}
 
         <div className="flex-grow flex flex-col items-center justify-center text-center">
             <li className="text-[#0a0101] text-base md:text-lg mb-5 font-medium">
