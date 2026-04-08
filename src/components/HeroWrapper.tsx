@@ -1,4 +1,6 @@
-const HeroWrapper = ({ children }: { children: React.ReactNode }) => {
+import HeroContent from "./HeroContent";
+
+const HeroWrapper = () => {
   return (
     <section className="relative h-screen w-full overflow-hidden">
 
@@ -13,7 +15,7 @@ const HeroWrapper = ({ children }: { children: React.ReactNode }) => {
 
       {/* Content */}
       <div className="relative z-10 flex flex-col h-full">
-        {children}
+        <HeroContent />
       </div>
 
     </section>

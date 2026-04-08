@@ -1,87 +1,234 @@
+// "use client";
+
+// import { useState, useEffect } from "react";
+// import { usePathname } from "next/navigation";
+// import clsx from "clsx";
+// import Logo from "./Logo";
+// import SideLogo from "./SideLogo";
+// import Link from "next/link";
+
+
+// type NavBarProps = {
+//   className?: string;
+// }
+
+
+// const Navbar = ({ className }: NavBarProps) => {
+//   const [open, setOpen] = useState(false);
+//   const [show, setShow] = useState(true);
+//   const pathname = usePathname();
+
+//   const isHome = pathname === "/";
+
+//   useEffect(() => {
+//     let lastScroll = 0;
+
+//     const handleScroll = () => {
+//       const current = window.scrollY;
+
+//       // always visible at top
+//       if (current <= 0) {
+//         setShow(true);
+//         return;
+//       }
+
+//       // scrolling down
+//       if (current > lastScroll && current > 80) {
+//         setShow(false);
+//       } else {
+//         // scrolling up
+//         setShow(true);
+//       }
+
+//       lastScroll = current;
+//     };
+
+//     window.addEventListener("scroll", handleScroll);
+//     return () => window.removeEventListener("scroll", handleScroll);
+//   }, []);
+
+//   return (
+//     <header
+//       className={clsx(
+//         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+//         show ? "translate-y-0" : "-translate-y-full", className
+//       )}
+//       style={{
+//         backgroundColor: isHome
+//           ? "transparent" 
+//           : "rgba(0,0,0,0.2)",
+//         backdropFilter: "blur(10px)",
+//       }}
+//     >
+//       {/* DESKTOP */}
+//       <nav className="hidden md:flex px-6 md:px-12 lg:px-16 xl:px-[123px] pt-4 h-full w-full items-center justify-between font-normal ">
+//         <Link href="/services" >
+//           <SideLogo
+//             text="Explore The Studio"
+//             className="gap-2 text-white hover:underline"
+//           />
+//         </Link>
+
+//         <Link href="/">
+//           <Logo className="text-white h-16 hover:opacity-80 mb-4" />
+//         </Link>
+
+//         <Link href="/contact">
+//           <SideLogo
+//             text="Create Without Limits"
+//             className="gap-2 text-white hover:underline"
+//           />
+//         </Link>
+//       </nav>
+
+//       {/* MOBILE */}
+//       <nav className="md:hidden flex justify-between items-center px-6 h-16">
+//         <Link href="/">
+//           <Logo className="text-white h-10" />
+//         </Link>
+
+//         <button onClick={() => setOpen(true)} className="w-8 h-6">
+//           <div className="flex flex-col gap-1">
+//             <span className="block h-[2px] bg-white w-full"></span>
+//             <span className="block h-[2px] bg-white w-full"></span>
+//             <span className="block h-[2px] bg-white w-full"></span>
+//           </div>
+//         </button>
+//       </nav>
+
+//       {/* BACKDROP */}
+//       <div
+//         onClick={() => setOpen(false)}
+//         className={clsx(
+//           "fixed inset-0 bg-black/40 transition-opacity duration-300 md:hidden",
+//           open ? "opacity-100 visible" : "opacity-0 invisible"
+//         )}
+//       />
+
+//       {/* MOBILE MENU */}
+//       <div
+//         className={clsx(
+//           "fixed top-0 right-0 h-screen w-80 bg-black transition-transform duration-500 z-50 md:hidden",
+//           open ? "translate-x-0" : "translate-x-full"
+//         )}
+//       >
+//         {/* Close */}
+//         <div className="flex justify-end p-6">
+//           <button
+//             onClick={() => setOpen(false)}
+//             className="text-white text-2xl"
+//           >
+//             ×
+//           </button>
+//         </div>
+
+//         {/* Menu Items */}
+//         <div className="flex flex-col px-6 gap-6 text-white text-lg">
+//           <Link href="/services" className="hover:opacity-80">
+//             <SideLogo
+//               text="Explore The Studio"
+//               className=" gap-3 text-lg text-white hover:underline"
+//             />
+//           </Link>
+//           <Link href="/contact" className="hover:opacity-80">
+//             <SideLogo
+//               text="Create Without Limits"
+//               className=" gap-3 text-lg text-white hover:underline"
+//             />
+//           </Link>
+//         </div>
+//       </div>
+//     </header>
+//   );
+// };
+
+// export default Navbar;
+
+
+
+
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
 import Logo from "./Logo";
 import SideLogo from "./SideLogo";
 import Link from "next/link";
 
-
 type NavBarProps = {
   className?: string;
-}
-
+};
 
 const Navbar = ({ className }: NavBarProps) => {
   const [open, setOpen] = useState(false);
   const [show, setShow] = useState(true);
+  const [isAtTop, setIsAtTop] = useState(true);
   const pathname = usePathname();
-
-  const isHome = pathname === "/";
+  
+  const lastScrollRef = useRef(0);
 
   useEffect(() => {
-    let lastScroll = 0;
-
     const handleScroll = () => {
       const current = window.scrollY;
+      
+      // 1. Determine if we are at the very top (the "first page" view)
+      // We use 10px as a buffer for better feel
+      setIsAtTop(current < 10);
 
-      // always visible at top
+      // 2. Navigation Visibility logic
       if (current <= 0) {
-        setShow(true);
-        return;
+        setShow(true); // Always visible at absolute top
+      } else if (current > lastScrollRef.current && current > 80) {
+        setShow(false); // Scrolling down - Hide
+      } else if (current < lastScrollRef.current) {
+        setShow(true); // Scrolling up - Show
       }
 
-      // scrolling down
-      if (current > lastScroll && current > 80) {
-        setShow(false);
-      } else {
-        // scrolling up
-        setShow(true);
-      }
-
-      lastScroll = current;
+      lastScrollRef.current = current;
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Close mobile menu on route change
+  useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
 
   return (
     <header
       className={clsx(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        show ? "translate-y-0" : "-translate-y-full", className
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
+        show ? "translate-y-0" : "-translate-y-full",
+        // Logic: Transparent at the top of ANY route, blurred otherwise
+        isAtTop ? "bg-transparent" : "bg-black/20 backdrop-blur-md",
+        className
       )}
-      style={{
-        backgroundColor: isHome
-          ? "transparent" 
-          : "rgba(0,0,0,0.2)",
-        backdropFilter: "blur(10px)",
-      }}
     >
-      {/* DESKTOP */}
-      <nav className="hidden md:flex px-6 md:px-12 lg:px-16 xl:px-[123px] pt-4 h-20 items-center justify-between">
-        <Link href="/services" >
+      {/* DESKTOP NAV */}
+      <nav className="hidden md:flex px-6 md:px-12 lg:px-16 xl:px-[123px] pt-4 h-24 w-full items-center justify-between font-normal">
+        <Link href="/services">
           <SideLogo
             text="Explore The Studio"
-            className="gap-3 text-white hover:underline"
+            className="gap-2 text-white hover:underline"
           />
         </Link>
 
         <Link href="/">
-          <Logo className="text-white h-16 hover:opacity-80" />
+          <Logo className="text-white h-16 hover:opacity-80 mb-4" />
         </Link>
 
         <Link href="/contact">
           <SideLogo
             text="Create Without Limits"
-            className="gap-3 text-white hover:underline"
+            className="gap-2 text-white hover:underline"
           />
         </Link>
       </nav>
 
-      {/* MOBILE */}
+      {/* MOBILE NAV */}
       <nav className="md:hidden flex justify-between items-center px-6 h-16">
         <Link href="/">
           <Logo className="text-white h-10" />
@@ -112,28 +259,26 @@ const Navbar = ({ className }: NavBarProps) => {
           open ? "translate-x-0" : "translate-x-full"
         )}
       >
-        {/* Close */}
         <div className="flex justify-end p-6">
           <button
             onClick={() => setOpen(false)}
-            className="text-white text-2xl"
+            className="text-white text-3xl font-light"
           >
             ×
           </button>
         </div>
 
-        {/* Menu Items */}
         <div className="flex flex-col px-6 gap-6 text-white text-lg">
           <Link href="/services" className="hover:opacity-80">
             <SideLogo
               text="Explore The Studio"
-              className=" gap-3 text-lg text-white hover:underline"
+              className="gap-3 text-lg text-white hover:underline"
             />
           </Link>
-          <Link href="contact" className="hover:opacity-80">
+          <Link href="/contact" className="hover:opacity-80">
             <SideLogo
               text="Create Without Limits"
-              className=" gap-3 text-lg text-white hover:underline"
+              className="gap-3 text-lg text-white hover:underline"
             />
           </Link>
         </div>
@@ -143,3 +288,7 @@ const Navbar = ({ className }: NavBarProps) => {
 };
 
 export default Navbar;
+
+
+
+

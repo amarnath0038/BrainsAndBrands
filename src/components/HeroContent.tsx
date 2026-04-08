@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const HeroContent = () => {
   return (
-    <div className="flex-grow flex flex-col justify-start pt-6 md:pt-8 lg:pt-10 items-center px-6 sm:px-8 md:px-16 lg:px-[123px] text-white text-center">
+    <div className="flex-grow flex flex-col justify-start pt-24 md:pt-26 lg:pt-30 items-center px-6 sm:px-8 md:px-16 lg:px-[123px] text-white text-center">
 
       <p className={`${outfit.className} tracking-tight text-base sm:text-lg lg:text-xl font-light mb-4`}>
         Where vision meets velocity, an AI-enabled multi-use studio redefining creativity
@@ -17,7 +17,7 @@ const HeroContent = () => {
           "A SPACE TO EXPRESS &",
           "EXPERIENCE",
         ]}
-        className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium max-w-4xl uppercase mb-6"
+        className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium max-w-4xl uppercase mb-3"
       />
 
       <Link href="/contact">
