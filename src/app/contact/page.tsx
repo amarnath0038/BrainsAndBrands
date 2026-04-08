@@ -2,16 +2,16 @@ import CalendlySection from "@/components/CalendlySection";
 import ContactInfo from "@/components/ContactInfo";
 import ContactPage from "@/components/ContactPage";
 import ContactPageMain from "@/components/ContactPageMain";
-import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
+import ContactForm from "@/components/ContactForm";
 
 const Contact = () => {
   return (
     <section>
         <Navbar />
         <ContactPageMain />
-        <ContactSection />
+        <ContactForm />
         <ContactInfo />
         <CalendlySection />
         <ContactPage text="BOOK. CREATE EXPRESS." />
