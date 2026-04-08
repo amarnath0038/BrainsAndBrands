@@ -1,6 +1,5 @@
 import Navbar from "@/components/Navbar";
 import HeroWrapper from "@/components/HeroWrapper";
-import HeroContent from "@/components/HeroContent";
 import IntroSection from "@/components/IntroSection";
 import AutoSwiperPage from "@/components/AutoSwiperPage";
 import StudioPage from "@/components/StudioPage";
