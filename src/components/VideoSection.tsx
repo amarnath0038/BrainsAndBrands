@@ -18,7 +18,7 @@ const VideoSection = () => {
   return (
     <>
       {/* Thumbnail */}
-      <div className="flex flex-col items-center mt-20">
+      <div className="flex flex-col items-center mt-12">
 
         <div
           onClick={() => setOpen(true)}
