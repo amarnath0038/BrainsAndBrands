@@ -16,11 +16,8 @@ import Footer from "@/components/Footer";
 export default function Home() {
   return (
     <div>
-      <HeroWrapper>
-        <Navbar className="relative z-50" />
-        <HeroContent />
-      </HeroWrapper>
-
+      <Navbar />
+      <HeroWrapper />
       <IntroSection />
       <AutoSwiperPage />
       <StudioPage />
