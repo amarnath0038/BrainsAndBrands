@@ -1,7 +1,7 @@
 import { outfit } from "@/lib/fonts";
 import SideLogo from "./SideLogo";
 
-const ContactPage = () => {
+const ContactPage = ({ text }: { text: string }) => {
   return (
     <section className="relative w-full min-h-[220px] md:min-h-[320px] lg:min-h-[420px] xl:min-h-[520px] overflow-hidden">
       {/*Bg Image*/}
@@ -20,7 +20,7 @@ const ContactPage = () => {
             {/*Left*/}
             <div className="text-left lg:flex-1 flex flex-col md:flex-row gap-5 md:justify-between w-full max-w-2xl lg:max-w-none">
                 <h2 className="text-[#fff3e9] text-4xl md:text-5xl lg:text-[54px] font-medium tracing-[-0.01em] text-left">
-                    CREATE WITHOUT LIMITS
+                    { text }
                 </h2>
                 <div className="lg:text-left lg:flex-1 max-w-lg lg:max-w-md xl:max-w-lg">
                     <p className={`${outfit.className} text-[#fff3e9] text-base lg:text-lg font-normal leading-relaxed opacity-90`}>
