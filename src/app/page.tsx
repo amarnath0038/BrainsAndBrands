@@ -28,7 +28,7 @@ export default function Home() {
       <ServicesGrid />
       <FacesFrames />
       <StoriesSwiperPage />
-      <ContactPage />
+      <ContactPage text="CREATE WITHOUT LIMITS" />
       <Footer />
     </div>
   );
