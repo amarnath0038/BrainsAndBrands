@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import clsx from "clsx";
 import Logo from "./Logo";
 import SideLogo from "./SideLogo";
-import { Chocolate_Classical_Sans } from "next/font/google";
+import Link from "next/link";
 
 
 type NavBarProps = {
@@ -62,22 +62,30 @@ const Navbar = ({ className }: NavBarProps) => {
     >
       {/* DESKTOP */}
       <nav className="hidden md:flex px-6 md:px-12 lg:px-16 xl:px-[123px] pt-4 h-20 items-center justify-between">
-        <SideLogo
-          text="Explore The Studio"
-          className="gap-6 text-white hover:underline"
-        />
+        <Link href="/services" >
+          <SideLogo
+            text="Explore The Studio"
+            className="gap-3 text-white hover:underline"
+          />
+        </Link>
 
-        <Logo className="text-white h-16 hover:opacity-80" />
+        <Link href="/">
+          <Logo className="text-white h-16 hover:opacity-80" />
+        </Link>
 
-        <SideLogo
-          text="Create Without Limits"
-          className="gap-6 text-white hover:underline"
-        />
+        <Link href="/contact">
+          <SideLogo
+            text="Create Without Limits"
+            className="gap-3 text-white hover:underline"
+          />
+        </Link>
       </nav>
 
       {/* MOBILE */}
       <nav className="md:hidden flex justify-between items-center px-6 h-16">
-        <Logo className="text-white h-10" />
+        <Link href="/">
+          <Logo className="text-white h-10" />
+        </Link>
 
         <button onClick={() => setOpen(true)} className="w-8 h-6">
           <div className="flex flex-col gap-1">
@@ -116,12 +124,18 @@ const Navbar = ({ className }: NavBarProps) => {
 
         {/* Menu Items */}
         <div className="flex flex-col px-6 gap-6 text-white text-lg">
-          <a href="#" className="hover:opacity-80">
-            Explore The Studio
-          </a>
-          <a href="#" className="hover:opacity-80">
-            Create Without Limits
-          </a>
+          <Link href="/services" className="hover:opacity-80">
+            <SideLogo
+              text="Explore The Studio"
+              className=" gap-3 text-lg text-white hover:underline"
+            />
+          </Link>
+          <Link href="contact" className="hover:opacity-80">
+            <SideLogo
+              text="Create Without Limits"
+              className=" gap-3 text-lg text-white hover:underline"
+            />
+          </Link>
         </div>
       </div>
     </header>

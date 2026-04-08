@@ -1,7 +1,7 @@
 import { outfit } from "@/lib/fonts";
 import BackgroundLogo from "./BackgroundLogo";
 import SideLogo from "./SideLogo";
-import clsx from "clsx";
+import Link from "next/link";
 
 const Features = () => {
   return (
@@ -22,9 +22,9 @@ const Features = () => {
             <p className={`${outfit.className} text-base md:text-lg text-white font-normal w-full lg:w-4/5 md:mb-5`}>
               Adaptive spaces, flexible lighting, mood-based setups, and reliable gear, everything in our studio is designed to keep your creative flow uninterrupted. With in-built AI intelligence enhancing every stage of production, each element helps you stay focused, comfortable, and fully in your zone.
             </p>
-
-            <SideLogo text="Explore Services" className={clsx("self-start gap-8 text-white underline underline-offset-2 tracking-tight")} />
-
+            <Link href="/services">
+              <SideLogo text="Explore Services" className="self-start gap-3 text-white underline underline-offset-2 tracking-tight" />
+            </Link>
           </div>
         </div>
         <div className="relative z-10 overflow-hidden group md:w-1/2">

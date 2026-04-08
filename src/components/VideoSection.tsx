@@ -59,7 +59,8 @@ const VideoSection = () => {
 
             {/* Video */}
             <video
-              src="/Brains-Brands-Final-Compressed.mp4"
+              src="https://brainsandbrands.in/wp-content/uploads/2025/11/Brains-Brands-Final.mp4"
+              // src="/Brains-Brands-Final-Compressed.mp4"
               controls
               autoPlay
               className="w-full h-auto"

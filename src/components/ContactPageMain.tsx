@@ -4,7 +4,7 @@ const ContactPageMain = () => {
       
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('/ExploreStudio.webp')", }}
+        style={{ backgroundImage: "url('/ContactPageMain.webp')", }}
       >
         <div className="absolute inset-0 bg-black/50" />
 

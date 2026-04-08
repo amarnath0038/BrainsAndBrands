@@ -1,16 +1,3 @@
-// import FacesFrames from "./FacesFrames";
-
-// const WorkSection = () => {
-//   return (
-//     <section>
-//       <FacesFrames />
-//     </section>
-//   );
-// };
-
-// export default WorkSection;
-
-
 import ImageScroller from "./ImageScroller";
 
 const WorkSection = () => {

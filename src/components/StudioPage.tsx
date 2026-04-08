@@ -1,7 +1,7 @@
 import { outfit } from "@/lib/fonts";
 import LogoBroken from "./LogoBroken";
 import SideLogo from "./SideLogo";
-import clsx from "clsx";
+import Link from "next/link";
 
 const StudioPage = () => {
   return (
@@ -42,7 +42,9 @@ const StudioPage = () => {
                            Rent the space, the tech, or both, our end-to-end setup is built to 
                         simplify your content production process.
                     </p>
-                    <SideLogo text="Explore Services" className={clsx("self-start gap-8 text-black underline underline-offset-2 tracking-tight")} />
+                    <Link href="/services">
+                        <SideLogo text="Explore Services" className="self-start gap-3 text-black underline underline-offset-2 tracking-tight" />
+                    </Link>
                 </div>
             </div>
         </div>

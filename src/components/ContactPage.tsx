@@ -1,5 +1,9 @@
+'use client'
+
 import { outfit } from "@/lib/fonts";
 import SideLogo from "./SideLogo";
+import Link from "next/link";
+import handleSamePageScroll from "@/utils/navigation";
 
 const ContactPage = ({ text }: { text: string }) => {
   return (
@@ -32,10 +36,12 @@ const ContactPage = ({ text }: { text: string }) => {
 
             {/*Right*/}
             <div className="flex justify-start">
+              <Link href="/contact" onClick={handleSamePageScroll("/contact")}>
                 <SideLogo
                     text="Book Your Slot"
-                    className="gap-8 mt-4 text-white border border-white/40 hover:border-white/50 bg-white/10 hover:bg-black/30 rounded-full px-6 py-3 backdrop-blur-sm transition duration-300"
+                    className="gap-3 mt-4 text-white border border-white/40 hover:border-white/50 bg-white/10 hover:bg-black/30 rounded-full px-6 py-3 backdrop-blur-sm transition duration-300"
                 />
+              </Link>
             </div>
         </div>
       </div>

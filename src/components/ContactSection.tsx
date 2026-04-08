@@ -1,6 +1,7 @@
 "use client";
 
 import SideLogo from "./SideLogo";
+import Link from "next/link";
 
 const ContactSection = () => {
   return (
@@ -14,7 +15,7 @@ const ContactSection = () => {
 
         <form className="space-y-8">
 
-          <div className="flex flex-col md:flex-row md:gap-7">
+          <div className="flex flex-col md:flex-row gap-7">
             <input
               type="text"
               placeholder="FIRST NAME"
@@ -28,7 +29,7 @@ const ContactSection = () => {
             />
           </div>
 
-          <div className="flex flex-col md:flex-row md:gap-7">
+          <div className="flex flex-col md:flex-row gap-7">
             <input
               type="email"
               placeholder="EMAIL"
@@ -48,9 +49,9 @@ const ContactSection = () => {
               className="w-full pb-5 bg-[#fff3e9] border-b border-gray-400 text-gray-800 appearance-none text-base font-medium outline-none"
             >
               <option>WHAT SERVICES ARE YOU LOOKING FOR ?</option>
-              <option>Studio Rental</option>
-              <option>Professional Equipment</option>
-              <option>Production Services</option>
+              <option>{"\u00A0 Studio Rental"}</option>
+              <option>{"\u00A0 Professional Equipment"}</option>
+              <option>{"\u00A0 Production Services"}</option>
             </select>
 
             
@@ -79,10 +80,12 @@ const ContactSection = () => {
 
           
           <div className="flex justify-center md:justify-end mt-10">
-            <SideLogo
-                text="Create Without Limits"
-                className="gap-8 mt-4 border border-[#603C54] hover:border-white/50 bg-white/10 hover:bg-black/30 rounded-full px-6 py-3 backdrop-blur-2xl transition-colors duration-300"
-            />
+            <Link href="/services">
+                <SideLogo
+                    text="Create Without Limits"
+                    className="gap-3 mt-4 border border-[#603C54] hover:border-white/50 bg-white/10 hover:bg-black/30 rounded-full px-6 py-3 backdrop-blur-2xl transition-colors duration-300"
+                />
+            </Link>
           </div>
 
         </form>
