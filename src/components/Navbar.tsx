@@ -6,6 +6,7 @@ import clsx from "clsx";
 import Logo from "./Logo";
 import SideLogo from "./SideLogo";
 import Link from "next/link";
+import handleSamePageScroll from "@/utils/navigation";
 
 type NavBarProps = {
   className?: string;
@@ -60,18 +61,18 @@ const Navbar = ({ className }: NavBarProps) => {
     >
       {/* DESKTOP NAV */}
       <nav className="hidden md:flex px-6 md:px-12 lg:px-16 xl:px-[123px] pt-4 h-24 w-full items-center justify-between font-normal">
-        <Link href="/services">
+        <Link href="/services" onClick={handleSamePageScroll("/services")}>
           <SideLogo
             text="Explore The Studio"
             className="gap-2 text-white hover:underline"
           />
         </Link>
 
-        <Link href="/">
+        <Link href="/" onClick={handleSamePageScroll("/")}>
           <Logo className="text-white h-16 hover:opacity-80 mb-4" />
         </Link>
 
-        <Link href="/contact">
+        <Link href="/contact" onClick={handleSamePageScroll("/contact")}>
           <SideLogo
             text="Create Without Limits"
             className="gap-2 text-white hover:underline"
@@ -81,7 +82,7 @@ const Navbar = ({ className }: NavBarProps) => {
 
       {/* MOBILE NAV */}
       <nav className="md:hidden flex justify-between items-center px-6 h-16">
-        <Link href="/">
+        <Link href="/" onClick={handleSamePageScroll("/")}>
           <Logo className="text-white h-10" />
         </Link>
 
@@ -120,13 +121,13 @@ const Navbar = ({ className }: NavBarProps) => {
         </div>
 
         <div className="flex flex-col px-6 gap-6 text-white text-lg">
-          <Link href="/services" className="hover:opacity-80">
+          <Link href="/services" className="hover:opacity-80" onClick={handleSamePageScroll("/services")}>
             <SideLogo
               text="Explore The Studio"
               className="gap-3 text-lg text-white hover:underline"
             />
           </Link>
-          <Link href="/contact" className="hover:opacity-80">
+          <Link href="/contact" className="hover:opacity-80" onClick={handleSamePageScroll("/contact")}>
             <SideLogo
               text="Create Without Limits"
               className="gap-3 text-lg text-white hover:underline"
