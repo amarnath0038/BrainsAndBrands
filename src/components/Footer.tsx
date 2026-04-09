@@ -1,4 +1,3 @@
-import { outfit } from "@/lib/fonts";
 import Logo from "./Logo";
 import LogoBroken from "./LogoBroken";
 import FooterItem from "./FooterItem";
