@@ -5,7 +5,7 @@ const SocialIcons = () => {
 
       {/* LinkedIn */}
       <a
-        href="#"
+        href="https://www.linkedin.com/company/brainsandbrands-1"
         target="_blank"
         rel="noopener noreferrer"
         className="hover:text-[#e8ebea] transition-colors duration-200"
@@ -15,7 +15,7 @@ const SocialIcons = () => {
 
       {/* Facebook */}
       <a
-        href="#"
+        href="https://www.facebook.com/profile.php?id=61582833463251"
         target="_blank"
         rel="noopener noreferrer"
         className="hover:text-[#e8ebea] transition-colors duration-200"
@@ -25,7 +25,7 @@ const SocialIcons = () => {
 
       {/* Instagram */}
       <a
-        href="#"
+        href="https://www.instagram.com/brainsandbrands_studio/"
         target="_blank"
         rel="noopener noreferrer"
         className="hover:text-[#e8ebea] transition-colors duration-200"
