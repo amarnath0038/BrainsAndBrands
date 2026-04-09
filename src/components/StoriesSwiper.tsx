@@ -101,7 +101,7 @@ const StoriesSwiper = () => {
         {testimonials.map((item, i) => (
           <SwiperSlide key={i}>
             
-            <div className="flex flex-col-reverse md:flex-row w-full h-full">
+            <div className="flex flex-col-reverse md:flex-row w-full h-[520px] md:h-full">
 
               {/* LEFT */}
               <div className="relative flex flex-col justify-between gap-10 md:w-1/2 bg-black text-[#fff3e9] py-10 px-5 md:p-10">
@@ -116,9 +116,9 @@ const StoriesSwiper = () => {
                     alt={item.name}
                     className="w-[50px] h-[50px] rounded-full object-cover"
                   />
-                  <p className="text-base md:text-lg uppercase font-medium">
+                  <div className="text-base md:text-lg uppercase font-medium flex items-center">
                     {item.name}
-                  </p>
+                  </div>
                 </div>
 
                 <TestiminialSVG />
@@ -142,7 +142,7 @@ const StoriesSwiper = () => {
       </Swiper>
 
       
-      <div className="custom-pagination flex justify-center mt-6 gap-3"></div>
+      <div className=" custom-pagination flex justify-center mt-6 gap-3"></div>
 
     </section>
   );
