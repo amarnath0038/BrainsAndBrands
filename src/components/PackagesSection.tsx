@@ -136,7 +136,7 @@ const PackagesSection = () => {
       {/* FOOTER NOTE */}
       <div className="mt-10">
         <p className="text-base md:text-lg font-medium uppercase">
-          For details on package fees Whatsapp on +91-98765 43210
+          For details on package fees Whatsapp on +91-9381297604
         </p>
       </div>
 
